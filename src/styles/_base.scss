@@ -1,0 +1,102 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: $font-family;
+  font-weight: $font-bold;
+  line-height: 1.2;
+  color: $color-white;
+  background-color: $color-blue-dark;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: none;
+}
+
+button {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(186.93deg, $color-blue-dark 0.67%, $color-blue 100.39%);
+
+  @include tablet-up {
+    background-image: linear-gradient(203.07deg, $color-blue-dark 0.28%, $color-blue 100%);
+  }
+
+  @include desktop {
+    background-image: linear-gradient(208.5deg, $color-blue-dark 0%, $color-blue 100%);
+  }
+
+  main {
+    flex-grow: 1;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: $container-width + $gutter-desktop * 2;
+  margin: 0 auto;
+  padding: 0 $gutter-mobile;
+
+  @include tablet-up {
+    padding: 0 $gutter-tablet;
+  }
+
+  @include desktop {
+    padding: 0 $gutter-desktop;
+  }
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: $font-extra-bold;
+
+  @include tablet-up {
+    font-size: 24px;
+  }
+
+  @include desktop {
+    font-size: 32px;
+  }
+}

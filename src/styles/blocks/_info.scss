@@ -1,0 +1,109 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.info {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  @include tablet-up {
+    margin-top: 55px;
+    margin-bottom: 53px;
+  }
+
+  @include desktop {
+    margin-top: 62px;
+    margin-bottom: 60px;
+  }
+
+  &__title {
+    margin-bottom: 22px;
+
+    @include tablet-up {
+      margin-bottom: 13px;
+    }
+
+    @include desktop {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    opacity: 0.6;
+
+    @include tablet-up {
+      font-size: 16px;
+    }
+
+    @include desktop {
+      font-size: 20px;
+    }
+
+    &--more {
+      padding-top: 1.2em;
+    }
+  }
+
+
+  &__toggle {
+    @include visually-hidden;
+  }
+
+  &__more {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
+  }
+
+  &__more-inner {
+    overflow: hidden;
+  }
+
+  &__toggle:checked~&__more {
+    grid-template-rows: 1fr;
+  }
+
+  &__read-more {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: $font-extra-bold;
+    color: $color-yellow;
+    cursor: pointer;
+    user-select: none;
+    transition: color $transition;
+
+    @include tablet-up {
+      font-size: 16px;
+    }
+
+    @include desktop {
+      margin-top: 17px;
+      font-size: 20px;
+    }
+
+    &:hover {
+      color: $color-yellow-hover;
+    }
+  }
+
+  &__toggle:focus-visible~&__read-more {
+    color: $color-yellow-hover;
+    outline: 2px solid $color-yellow-hover;
+    outline-offset: 2px;
+  }
+
+  &__read-more-label--opened {
+    display: none;
+  }
+
+  &__toggle:checked~&__read-more &__read-more-label {
+    &--closed {
+      display: none;
+    }
+
+    &--opened {
+      display: inline;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// Lato 2.0: "Heavy" is the 800 weight that Figma calls "Lato ExtraBold"
+@font-face {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('~assets/fonts/lato-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('~assets/fonts/lato-heavy.woff2') format('woff2');
+}

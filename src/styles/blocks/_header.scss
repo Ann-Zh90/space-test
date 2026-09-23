@@ -1,0 +1,140 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.header {
+  position: relative;
+  z-index: 10;
+  height: 48px;
+  background-color: $color-black;
+
+  @include tablet-up {
+    height: 80px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+
+    img {
+      width: auto;
+      height: auto;
+
+      @include desktop {
+        width: 104px;
+        height: 35px;
+      }
+    }
+  }
+
+  &__burger {
+    display: block;
+
+    @include tablet-up {
+      display: none;
+    }
+  }
+}
+
+.burger {
+  width: 30px;
+  height: 38px;
+}
+
+
+.nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 0;
+  background-color: $color-black;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity $transition, transform $transition, visibility $transition;
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @include tablet-up {
+    position: static;
+    padding-right: 20px;
+    background-color: transparent;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @include desktop {
+    padding-right: 11px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    @include tablet-up {
+      flex-direction: row;
+      align-items: center;
+      gap: 48px;
+    }
+
+    @include desktop {
+      gap: 60px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-top: 1px solid $color-yellow;
+
+    @include tablet-up {
+      display: block;
+      height: auto;
+      border-top: 0;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: $font-bold;
+
+    @include hover {
+      @include gradient-text;
+    }
+  }
+
+  &__cart {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 20px;
+    background: url('~assets/svg/cart.svg') center / 100% 100% no-repeat;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('~assets/svg/cart-hover.svg') center / 100% 100% no-repeat;
+      opacity: 0;
+      transition: opacity $transition;
+    }
+
+    @include hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

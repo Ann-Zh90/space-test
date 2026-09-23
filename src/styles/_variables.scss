@@ -1,0 +1,29 @@
+// Colors (Figma → Elements → colors)
+$color-pink: #ff70d9;
+$color-yellow: #ebff00;
+$color-yellow-hover: rgba(235, 255, 0, 0.6);
+$color-blue-dark: #0d1e48;
+$color-blue: #304571;
+$color-black: #000;
+$color-white: #fff;
+$color-shade: rgba(15, 20, 32, 0.79);
+
+$gradient-text: linear-gradient(118deg, $color-yellow 18.557%, $color-pink 76.023%);
+
+// Typography
+$font-family: 'Lato', Arial, sans-serif;
+$font-bold: 700;
+$font-extra-bold: 800;
+
+// Layout
+$container-width: 1088px;
+$gutter-desktop: 80px;
+$gutter-tablet: 30px;
+$gutter-mobile: 20px;
+$radius-card: 10px;
+
+// Breakpoints: mobile (360) is the base, min-width queries add tablet (768) then desktop (1248)
+$bp-tablet-min: 768px;
+$bp-desktop-min: 1248px;
+
+$transition: 0.2s ease;

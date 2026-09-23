@@ -1,0 +1,23 @@
+@use '../variables' as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: 127px;
+  padding: 17px 20px 19px;
+  background-color: $color-black;
+
+  &__rocket {
+    filter: drop-shadow(-10.6px 5.1px 8.8px rgba(0, 0, 0, 0.25));
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: $font-extra-bold;
+    line-height: 28px;
+    color: $color-yellow;
+    text-align: center;
+  }
+}

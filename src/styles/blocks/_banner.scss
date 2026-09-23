@@ -1,0 +1,167 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.banner {
+  overflow: hidden;
+  height: 452px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), $color-shade),
+    url('~assets/img/banner-mobile.jpg') center bottom / cover no-repeat;
+
+  @include tablet-up {
+    height: 420px;
+    @include shaded-bg(url('~assets/img/banner-tablet.jpg'), center 93%);
+  }
+
+  @include desktop {
+    height: 490px;
+    @include shaded-bg(url('~assets/img/banner-desktop.jpg'), center 60%);
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 44px;
+    height: 100%;
+
+    @include tablet-up {
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-bottom: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+    max-width: 411px;
+    font-weight: $font-extra-bold;
+    text-align: center;
+
+    @include tablet-up {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    @include desktop {
+      gap: 22px;
+      max-width: 693px;
+    }
+  }
+
+  &__title {
+    max-width: 292px;
+    font-size: 36px;
+    line-height: 1;
+
+    @include tablet-up {
+      max-width: 411px;
+      font-size: 48px;
+    }
+
+    @include desktop {
+      max-width: 693px;
+      font-size: 72px;
+    }
+  }
+
+  &__accent {
+    color: $color-pink;
+  }
+
+  &__subtitle {
+    max-width: 580px;
+    font-size: 16px;
+
+    @include tablet-up {
+      font-size: 22px;
+    }
+
+    @include desktop {
+      font-size: 32px;
+    }
+  }
+
+  &__highlight {
+    color: $color-yellow;
+  }
+
+  &__button {
+    @include tablet-up {
+      @include button-large;
+    }
+  }
+}
+
+.earth {
+  position: absolute;
+  top: -116px;
+  right: auto;
+  left: 50%;
+  width: 327px;
+  height: 367px;
+  transform: translateX(-50%) scale(0.9155);
+  transform-origin: top center;
+
+  @include tablet-up {
+    top: 26px;
+    right: -73px;
+    left: auto;
+    transform: scale(0.9155);
+    transform-origin: top right;
+  }
+
+  @include desktop {
+    top: 59px;
+    right: $gutter-desktop + 11px;
+    left: auto;
+    transform: none;
+  }
+
+  >* {
+    position: absolute;
+  }
+
+  &__orbit {
+    top: 17.31px;
+    left: 0;
+  }
+
+  &__planet {
+    top: 0;
+    left: 33.72px;
+    width: 293.41px;
+    height: 324.58px;
+    object-fit: cover;
+    filter: drop-shadow(19.46px 28.54px 12.98px rgba(51, 143, 168, 0.2));
+  }
+
+  &__rocket {
+    top: 256px;
+    left: 130px;
+    filter: drop-shadow(-18.6px 8.9px 15.3px rgba(0, 0, 0, 0.25));
+  }
+
+  &__moon {
+    &--yellow {
+      top: 64.7px;
+      left: 5.47px;
+    }
+
+    &--orange {
+      top: 206.85px;
+      left: 0;
+    }
+
+    &--white {
+      top: 284.3px;
+      left: 71.08px;
+    }
+  }
+}
