@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "./static/css/main.3440d944.css",
+    "main.js": "./static/js/main.0e3bcc17.js",
+    "static/js/453.0e815cee.chunk.js": "./static/js/453.0e815cee.chunk.js",
+    "static/media/banner-desktop.jpg": "./static/media/banner-desktop.795e0121ec8d9dd53433.jpg",
+    "static/media/banner-tablet.jpg": "./static/media/banner-tablet.ac1db29147f5793edeaa.jpg",
+    "static/media/banner-mobile.jpg": "./static/media/banner-mobile.26cafa87766a3b608add.jpg",
+    "static/media/lato-bold.woff2": "./static/media/lato-bold.21b3848a32fce5b0f501.woff2",
+    "static/media/lato-heavy.woff2": "./static/media/lato-heavy.75f024ce11d1fb961e8c.woff2",
+    "static/media/card-fulfill-desktop.jpg": "./static/media/card-fulfill-desktop.4b1d7c095ec89bb1b41c.jpg",
+    "static/media/card-borders-desktop.jpg": "./static/media/card-borders-desktop.f5892277ecc0dac6d4dc.jpg",
+    "static/media/earth.png": "./static/media/earth.c11020e2156e1619c6d0.png",
+    "static/media/card-fulfill-tablet.jpg": "./static/media/card-fulfill-tablet.79461370d8c5220f41e0.jpg",
+    "static/media/card-dream-desktop.jpg": "./static/media/card-dream-desktop.d6ffe6b47c9fa0b5628d.jpg",
+    "static/media/card-space-desktop.jpg": "./static/media/card-space-desktop.96601f8557fae325cfa7.jpg",
+    "static/media/card-borders-tablet.jpg": "./static/media/card-borders-tablet.e3450e2430f3702458f4.jpg",
+    "static/media/card-space-tablet.jpg": "./static/media/card-space-tablet.e0aab9acda92e380111a.jpg",
+    "static/media/card-dream-tablet.jpg": "./static/media/card-dream-tablet.ca901a381fa0a5393a49.jpg",
+    "static/media/logo.svg": "./static/media/logo.1577eda6a6b024cb07db3b76c6707fb9.svg",
+    "static/media/cart-hover.svg": "./static/media/cart-hover.5389e99b6f406a730db8.svg",
+    "static/media/cart.svg": "./static/media/cart.1a0f39da64b6b2fe58bc.svg",
+    "static/media/menu.svg": "./static/media/menu.96d0cdd5a30393ea2130bc9aac40d04a.svg",
+    "index.html": "./index.html",
+    "static/media/planet-yellow.svg": "./static/media/planet-yellow.b2f54bcf94b725c232803cfe12f697a2.svg",
+    "static/media/close.svg": "./static/media/close.064066722239fd477db9c2a97a4b4b6d.svg",
+    "static/media/orbit.svg": "./static/media/orbit.29256676f6a992415dd8a29276f2dbf9.svg",
+    "static/media/planet-orange.svg": "./static/media/planet-orange.ea9db2684d4262198e3afa6c58811418.svg",
+    "static/media/planet-white.svg": "./static/media/planet-white.2c9f3bac0c938d78d08c81010bb0999c.svg",
+    "main.3440d944.css.map": "./static/css/main.3440d944.css.map",
+    "main.0e3bcc17.js.map": "./static/js/main.0e3bcc17.js.map",
+    "453.0e815cee.chunk.js.map": "./static/js/453.0e815cee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3440d944.css",
+    "static/js/main.0e3bcc17.js"
+  ]
+}
