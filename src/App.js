@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 import { navLinks, offers } from './data';
 
@@ -14,7 +14,25 @@ import rocket from './assets/img/rocket.png';
 
 const MOBILE_QUERY = '(max-width: 768px)';
 
-function Earth() {
+function useMediaQuery(query) {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(query);
+    setMatches(mediaQuery.matches);
+
+    const handleChange = (event) => {
+      setMatches(event.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, [query]);
+
+  return matches;
+}
+
+const Earth = () => {
   return (
     <div className="earth" aria-hidden="true">
       <img className="earth__orbit" src={orbit} alt="" />
@@ -25,9 +43,9 @@ function Earth() {
       <img className="earth__moon earth__moon--white" src={planetWhite} alt="" />
     </div>
   );
-}
+};
 
-function OfferCard({ id, title, text, textCompact, wide }) {
+const OfferCard = ({ id, title, text, textCompact, wide }) => {
   return (
     <article className={`offer-card offer-card--${id}${wide ? ' offer-card--wide' : ''}`}>
       <h3 className="offer-card__title">{title}</h3>
@@ -46,26 +64,23 @@ function OfferCard({ id, title, text, textCompact, wide }) {
       </button>
     </article>
   );
-}
+};
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isMobile = useMediaQuery(MOBILE_QUERY);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia(MOBILE_QUERY);
-    const handleChange = (event) => {
-      if (!event.matches) setIsMenuOpen(false);
-    };
+    if (!isMobile) setIsMenuOpen(false);
+  }, [isMobile]);
+
+  useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') setIsMenuOpen(false);
     };
 
-    mediaQuery.addEventListener('change', handleChange);
     document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      mediaQuery.removeEventListener('change', handleChange);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   const closeMenu = () => setIsMenuOpen(false);
